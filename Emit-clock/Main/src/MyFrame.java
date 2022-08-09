@@ -5,23 +5,13 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-/*
-https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html#text
- */
+/* https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html#text */
 
 public class MyFrame extends JFrame {
 
-
-    Calendar calender;
-    SimpleDateFormat timeFormat;
-    SimpleDateFormat dayFormat;
-    SimpleDateFormat dateFormat;
-    JLabel timeLabel;
-    JLabel dayLabel;
-    JLabel dateLabel;
-    String time;
-    String day;
-    String date;
+    SimpleDateFormat timeFormat, dayFormat, dateFormat;
+    JLabel timeLabel, dayLabel, dateLabel;
+    String time, day, date;
 
     MyFrame(){
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,7 +23,7 @@ public class MyFrame extends JFrame {
 
         timeFormat = new SimpleDateFormat("kk:mm:ss ");
         dayFormat = new SimpleDateFormat("EEEE");
-        dateFormat = new SimpleDateFormat("MM dd, yyyy");
+        dateFormat = new SimpleDateFormat("MMMMM dd, yyyy");
 
         timeLabel = new JLabel();
         timeLabel.setFont( new Font("Verdana",Font.PLAIN,65));
