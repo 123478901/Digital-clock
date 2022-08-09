@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-/* https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html#text */
+/* https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html#text*/
 
 public class MyFrame extends JFrame {
 
