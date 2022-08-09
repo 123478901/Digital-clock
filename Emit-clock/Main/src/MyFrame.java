@@ -3,11 +3,11 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-//https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html#text
+/*
+https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html#text
+ */
 
 public class MyFrame extends JFrame {
 
@@ -15,10 +15,13 @@ public class MyFrame extends JFrame {
     Calendar calender;
     SimpleDateFormat timeFormat;
     SimpleDateFormat dayFormat;
+    SimpleDateFormat dateFormat;
     JLabel timeLabel;
     JLabel dayLabel;
+    JLabel dateLabel;
     String time;
     String day;
+    String date;
 
     MyFrame(){
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,7 +32,8 @@ public class MyFrame extends JFrame {
 
 
         timeFormat = new SimpleDateFormat("kk:mm:ss ");
-        dayFormat = new SimpleDateFormat("E");
+        dayFormat = new SimpleDateFormat("EEEE");
+        dateFormat = new SimpleDateFormat("MM dd, yyyy");
 
         timeLabel = new JLabel();
         timeLabel.setFont( new Font("Verdana",Font.PLAIN,65));
@@ -38,11 +42,14 @@ public class MyFrame extends JFrame {
         timeLabel.setOpaque(true);
         
         dayLabel = new JLabel();
-        dayLabel.setFont( new Font("Ink Free",Font.PLAIN,50));
+        dayLabel.setFont( new Font("Ink Free",Font.PLAIN,35));
         
+        dateLabel = new JLabel();
+        dateLabel.setFont( new Font("Ink Free",Font.PLAIN,25));
 
         this.add(timeLabel);
         this.add(dayLabel);
+        this.add(dateLabel);
         this.setVisible(true);
 
         setTime();
@@ -55,12 +62,13 @@ public class MyFrame extends JFrame {
 
         day = dayFormat.format(Calendar.getInstance().getTime());
         dayLabel.setText(day);
-
+        
+        date = dateFormat.format(Calendar.getInstance().getTime());
+        dateLabel.setText(date);
         try {
             
             Thread.sleep(1000);
         } catch (Exception e) {
-            //TODO: handle exception
             e.printStackTrace();
         }
     } 
